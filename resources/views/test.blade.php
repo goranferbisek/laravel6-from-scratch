@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Test complete</h1>
-
+    <h1>{{ $name }}</h1>
 </body>
 </html>
