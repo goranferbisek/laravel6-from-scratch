@@ -21,4 +21,31 @@ class ArticlesController extends Controller
 
         return view('articles.show', ['article' => $article]);
     }
+
+    public function create()
+    {
+        // Show a view for creating an article
+    }
+
+    public function store()
+    {
+        // Persist the new resource
+    }
+
+    public function edit()
+    {
+        // Show a view to edit an existing article
+    }
+
+    public function update()
+    {
+        // Persist the changes
+    }
+
+    public function destroy()
+    {
+        // Delete a resource
+    }
+
+
 }
