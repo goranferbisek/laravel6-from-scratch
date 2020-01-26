@@ -1,5 +1,9 @@
 @extends ('layout')
 
+@section ('head')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.css">
+@endsection
+
 @section ('content')
     <div id="wrapper">
         <div id="page" class="container">
