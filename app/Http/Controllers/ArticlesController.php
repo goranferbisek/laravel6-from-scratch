@@ -46,9 +46,16 @@ class ArticlesController extends Controller
         return view('articles.edit', ['article' => $article]);
     }
 
-    public function update()
+    public function update($id)
     {
-        // Persist the changes
+        $article = Article::find($id);
+
+        $article->title = request('title');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
+        $article->save();
+
+        return redirect('/articles');
     }
 
     public function destroy()
