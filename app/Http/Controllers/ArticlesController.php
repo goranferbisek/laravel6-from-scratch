@@ -29,7 +29,14 @@ class ArticlesController extends Controller
 
     public function store()
     {
-        // Persist the new resource
+        $article = new Article();
+        $article->title = request('title');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
+
+        $article->save();
+
+        return redirect('/articles');
     }
 
     public function edit()
