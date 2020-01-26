@@ -39,9 +39,11 @@ class ArticlesController extends Controller
         return redirect('/articles');
     }
 
-    public function edit()
+    public function edit($id)
     {
-        // Show a view to edit an existing article
+        $article = Article::find($id);
+
+        return view('articles.edit', ['article' => $article]);
     }
 
     public function update()
