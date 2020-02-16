@@ -12,4 +12,9 @@ class Article extends Model
 
     // In case we do not need protection
     protected $guarded = [];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
