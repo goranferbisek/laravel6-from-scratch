@@ -36,7 +36,9 @@ class ArticlesController extends Controller
 
     public function store()
     {
-        $article = new Article($this->validateArticle());
+        $this->validateArticle();
+
+        $article = new Article(request(['title', 'excerpt', 'body']));
         $article->user_id = 1; // temporarily hardcoded
         $article->save();
 
@@ -67,7 +69,8 @@ class ArticlesController extends Controller
         return request()->validate([
             'title' => 'required',
             'excerpt' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'tags' => 'exists:tags,id' // exists on the tags table on id column
         ]);
     }
 }
